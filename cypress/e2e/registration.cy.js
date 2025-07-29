@@ -51,8 +51,6 @@ describe('Student Registration Page', () => {
     address: '#currentAddress',
     stateDropdown: '#state',
     cityDropdown: '#city',
-    stateOption: '#react-select-3-option-0',
-    cityOption: '#react-select-4-option-0',
     submit: '#submit',
     modal: '.modal-content',
     table: 'table'
@@ -88,9 +86,9 @@ describe('Student Registration Page', () => {
     cy.get(selectors.address).type(student.address);
 
     cy.get(selectors.stateDropdown).click();
-    cy.contains(selectors.stateOption, student.state).click();
+    cy.contains('div', student.state).click();
     cy.get(selectors.cityDropdown).click();
-    cy.contains(selectors.cityOption, student.city).click();
+    cy.contains('div', student.city).click();
     cy.get(selectors.submit).click();
 
     cy.get(selectors.modal).should('be.visible');
